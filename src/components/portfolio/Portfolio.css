@@ -1,0 +1,128 @@
+/* Portfolio Section */
+#portfolio {
+  padding: 40px 20px;
+  background-color: #4a4a4a; /* Light theme background */
+  color: #333; /* Default text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
+  min-height: 100vh; /* Ensure the portfolio takes full height */
+  width: 100%; /* Ensure the section spans full width */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  -webkit-text-fill-color: #fff;
+}
+
+/* Dark Theme */
+body.dark-mode #portfolio {
+  background-color: #2b2828; /* Dark theme background */
+  color: #fff; /* Dark theme text color */
+}
+
+/* Ensure full height for body and html */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+  
+  /* Portfolio Header */
+  .portfolio-header {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: inherit;
+  }
+  
+  /* Grid Item Styling */
+  .MuiGrid-item {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .portfolio-card {
+    height: 20vh;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+  
+  .portfolio-card-image {
+    flex: 1;
+  }
+  
+  .portfolio-card-content {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  .portfolio-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  
+  .portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(225, 14, 14, 0.2);
+  }
+  
+  /* Portfolio Card Image */
+  .portfolio-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Portfolio Card Content */
+  .portfolio-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Portfolio Card Title */
+  .portfolio-card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: inherit;
+  }
+  
+  /* Meta Information */
+  .portfolio-card-meta {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 5px;
+  }
+  
+  /* Buttons */
+  .portfolio-card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .portfolio-card-button {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+    transition: background 0.3s ease;
+  }
+  
+  .portfolio-card-button.live {
+    background-color: #007bff;
+  }
+  
+  .portfolio-card-button.live:hover {
+    background-color: #0056b3;
+  }
+  
+  .portfolio-card-button.source {
+    background-color: #28a745;
+  }
+  
+  .portfolio-card-button.source:hover {
+    background-color: #1e7e34;
+  }
+  

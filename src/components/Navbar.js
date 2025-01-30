@@ -9,25 +9,29 @@ import { singlePage } from '../info/Info';
 
 const links = [
     {
-        name: 'Home',
+        name: 'home',
         to: '',
         active: 'home'
     },
     {
         name: 'About Me',
-        to: 'about',
-        active: 'about'
+        to: 'About',
+        active: 'About'
     },
     {
-        name: info.initials,
-        type: 'initials',
-        to: '',
-        active: 'home'
+        name: 'Certifications & License',
+        to: 'Certifications',
+        active: 'Certifications'
     },
     {
-        name: 'Portfolio',
+        name: 'Projects',
         to: 'portfolio',
         active: 'portfolio'
+    },
+    {
+        name :'Contact Me',
+        to : 'contact',
+        active :'contact'
     }
 ]
 

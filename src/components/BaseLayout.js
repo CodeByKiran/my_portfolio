@@ -7,6 +7,8 @@ import MultiPageRoutes from './MultiPageRoutes';
 import { singlePage } from '../info/Info';
 import SinglePageRoutes from './SinglePageRoutes';
 import useScrollObserver from '../hooks/useScrollObserver';
+import { info } from "../info/Info";
+import SocialIcon from "./home/SocialIcon";
 
 export default function BaseLayout() {
    const location = useLocation()
@@ -44,17 +46,34 @@ export default function BaseLayout() {
                <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} active={active} setActive={setActive} />
             </Grid>
             <Grid item flexGrow={1}>
-               {singlePage ? <SinglePageRoutes refs={{refHome, refAbout, refPortfolio}}/> : <MultiPageRoutes />}
+               {singlePage ? <SinglePageRoutes refs={{ refHome, refAbout, refPortfolio }} darkMode={darkMode} /> : <MultiPageRoutes darkMode={darkMode} />}
             </Grid>
             <Grid item>
-               <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
-                  py={'1.5rem'} sx={{ opacity: 0.7 }} width={'100%'}>
-                  <p>template created with &hearts; by <a href={'https://paytonpierce.dev'}>Payton Pierce</a></p>
-                  <p>&copy; 2023</p>
+               <Box
+                  component={'footer'}
+                  display={'flex'}
+                  flexDirection={'column'}
+                  alignItems={'center'}
+                  py={'2.5rem'}
+                  sx={{ opacity: 0.7 }}
+                  width={'100%'}
+               >
+                  <p style={{ textAlign: 'center', fontSize: '1.2rem' }}>
+                     Thank you for visiting! 🚀 Connect with me on{' '}
+                     {info.socials.map((social, index) => (
+                        <SocialIcon
+                           key={index}
+                           link={social.link}
+                           icon={social.icon}
+                           label={social.label}
+                        />
+                     ))} to collaborate or chat.
+                  </p>
+                  <p style={{ marginTop: '0.5rem' }}>&copy; 2024 Sai Kiran. </p>
                </Box>
+
             </Grid>
          </Grid>
       </Box>
    )
 }
-

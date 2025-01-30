@@ -1,0 +1,143 @@
+@import "../../variables.modules";
+
+.portfolio {
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: $white;
+  transition: background-color 0.3s, color 0.3s;
+
+  &.dark {
+    background-color: $dark;
+    
+    .card {
+      background-color: #2d2d2d;
+    }
+  }
+}
+
+.sectionTitle {
+  color: $dark !important;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  
+  .dark & {
+    color: $white !important;
+  }
+}
+
+.gridContainer {
+  padding: 2rem 0;
+}
+
+.portfolioCard {
+  height: 100%;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .dark & {
+    background-color: #2d2d2d;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.cardContent {
+  padding: 1.5rem !important;
+}
+
+.title {
+  color: $dark;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem !important;
+
+  .dark & {
+    color: $white;
+  }
+}
+
+.description {
+  color: $dark;
+  margin-bottom: 1rem !important;
+
+  .dark & {
+    color: $white;
+  }
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infoItem {
+  color: $dark;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+
+  .dark & {
+    color: $white;
+  }
+
+  strong {
+    min-width: 120px;
+    color: $purple;
+    margin-right: 0.5rem;
+  }
+}
+
+.links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  color: $dark;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    color: $purple;
+  }
+
+  .dark & {
+    color: $white;
+    
+    &:hover {
+      color: $purple;
+    }
+  }
+}

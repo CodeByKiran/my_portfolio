@@ -1,49 +1,110 @@
 @import "../../variables.modules";
 
+// Typography adjustments
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
+  background: linear-gradient(90deg, #000000, #000000);
+  -webkit-background-clip: text;  // WebKit-specific property for Chrome, Safari
+  background-clip: text;          // Standard property for other browsers
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  margin-bottom: 1rem;
+
   @media only screen and (min-width: 940px) {
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-align: left;
   }
 }
 
+
 h2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   text-align: center;
+  color: rgba(232, 235, 236, 0.8);
+  font-weight: 400;
+
   @media only screen and (min-width: 940px) {
     font-size: 2rem;
     text-align: left;
   }
 }
 
-
-.hand {
+/*.hand {
   animation-name: wave;
-  animation-duration: 2.5s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   transform-origin: 70% 70%;
   display: inline-block;
-}
+}*/
 
+// Social icons and links
 a {
   color: $dark;
-  transition: color 200ms ease;
+  transition: all 300ms ease;
+  text-decoration: none;
+
+  &:hover {
+    color: #9cc1c9;
+    text-shadow: 0 0 10px #ffffff;
+  }
 }
 
-a:hover {
-  color: $lightgray;
-  transition: color 200ms ease;
+// Avatar enhancements
+.avatar {
+  border: 3px solid rgba(255, 255, 255, 0.5); /* Subtle light border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Glow around the avatar */
+  background: hsl(0, 100%, 100%); /* Neutral light background */
+  border-radius: 50%;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(134, 210, 237, 0.8); /* Stronger glow on hover */
+  }
 }
 
+// List styles for bio
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: rgb(248, 246, 246);
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// Social icons container
+.social-icons {
+  display: flex;
+  gap: 1rem;
+
+  a {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+
+    &:hover {
+      color: #9ed9f2;
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Responsive animations
 @keyframes wave {
-  0% { transform: rotate( 0.0deg) }
-  10% { transform: rotate(14.0deg) }
-  20% { transform: rotate(-8.0deg) }
-  30% { transform: rotate(14.0deg) }
-  40% { transform: rotate(-4.0deg) }
-  50% { transform: rotate(10.0deg) }
-  60% { transform: rotate( 0.0deg) }
-  100% { transform: rotate( 0.0deg) }
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(15deg); }
+  80% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
 }

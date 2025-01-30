@@ -1,24 +1,90 @@
 import React from 'react';
-import IconLink from "./IconLink";
-import {Box} from "@mui/material";
+import Style from './Portfolio.module.scss';
+import { Card, CardContent, Typography, Link, Box } from '@mui/material';
+import { Launch, GitHub } from '@mui/icons-material';
 
-function PortfolioBlock(props) {
-   const {image, live, source, title} = props;
-   return (
-      <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
-         <Box component={'img'} src={image} alt={'mockup'}/>
-         <h1 style={{fontSize: '2rem'}}>{title}</h1>
-         <Box className={'portfolio'} display={'flex'} flexDirection={'column'} gap={'0.5rem'}
-              alignItems={'center'} fontSize={'1.5rem'} py={'2rem'}>
-            <Box p={1} border={'2px solid black'} borderRadius={'25px'}>
-               <IconLink link={live} title={'Live Demo'} icon={'fa fa-safari'}/>
-            </Box>
-            <Box p={1} border={'2px solid black'} borderRadius={'25px'}>
-               <IconLink link={source} title={'Source Code'} icon={'fa fa-code'}/>
-            </Box>
-         </Box>
-      </Box>
-   );
-}
+const PortfolioBlock = ({
+  image,
+  live,
+  source,
+  title,
+  description,
+  category,
+  role,
+  tech,
+  features,
+  completionDate,
+  duration,
+  status,
+}) => {
+  return (
+    <Card className={Style.portfolioCard}>
+      <div className={Style.imageContainer}>
+        <img 
+          src={image} 
+          alt={title} 
+          className={Style.projectImage}
+        />
+      </div>
+      
+      <CardContent className={Style.cardContent}>
+        <Typography variant="h6" className={Style.title}>
+          {title}
+        </Typography>
+        
+        <Typography variant="body2" className={Style.description}>
+          {description}
+        </Typography>
+
+        <ul className={Style.infoList}>
+          <li className={Style.infoItem}>
+            <strong>Category:</strong> {category}
+          </li>
+          <li className={Style.infoItem}>
+            <strong>Role:</strong> {role}
+          </li>
+          <li className={Style.infoItem}>
+            <strong>Tech:</strong> {tech.join(', ')}
+          </li>
+          <li className={Style.infoItem}>
+            <strong>Features:</strong> {features.join(', ')}
+          </li>
+          <li className={Style.infoItem}>
+            <strong>Completed:</strong> {completionDate}
+          </li>
+          <li className={Style.infoItem}>
+            <strong>Duration:</strong> {duration}
+          </li>
+          <li className={Style.infoItem}>
+            <strong>Status:</strong> {status}
+          </li>
+        </ul>
+
+        <Box className={Style.links}>
+          {live && (
+            <Link
+              href={live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={Style.link}
+            >
+              <Launch fontSize="small" /> Live Demo
+            </Link>
+          )}
+          {source && (
+            <Link
+              href={source}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={Style.link}
+            >
+              <GitHub fontSize="small" /> Source Code
+            </Link>
+          )}
+        </Box>
+      </CardContent>
+    </Card>
+  );
+};
 
 export default PortfolioBlock;

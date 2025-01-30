@@ -1,0 +1,129 @@
+/* Base Styles for Contact Section */
+#contact {
+    padding: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Contact Container Styles */
+  .contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(214, 206, 206, 0.1);
+    text-decoration-color: #f3f2f2;
+    font-size: large;
+    margin-bottom: 40px;
+    
+    /* Light Theme (default) */
+    background-color: #abc1c3; /* Lighter background for light theme */
+    color: #333; /* Dark text for better contrast in light theme */
+    
+    /* Dark Theme (when applied) */
+    &.dark-mode {
+      background-color: #2b2828; /* Darker background for dark theme */
+      color: #fff; /* White text for dark theme */
+    }
+  }
+  
+  /* Heading Styles */
+  .contact-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: inherit; /* Inherits color based on theme */
+    padding: 10px;
+  }
+  
+  /* Form Styles */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  /* Label Styles */
+  .contact-form label {
+    border-radius: 80px;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    margin-top: 40px;
+    color: inherit; /* Inherit color from parent */
+  }
+  
+  /* Input and Textarea Styles */
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #060000;
+    border-radius: 4px;
+    font-size: 1rem;
+    border-radius: 30px;
+    /* Light Theme */
+    background-color: #f0ebeb;
+    color: #333; /* Dark text for input fields in light theme */
+    
+    /* Dark Theme */
+    &.dark-mode {
+      background-color: #444;
+      color: #fff; /* Light text for input fields in dark theme */
+    }
+  }
+  
+  /* Textarea Resizing */
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  /* Button Styles */
+  .contact-form button {
+    padding: 10px 2px;
+    background-color: #18cf7d;
+    color: #000;
+    border: ;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    
+    /* Button Disabled State */
+    &:disabled {
+      background-color: #f1e7e7;
+      color: #999;
+      cursor: not-allowed;
+    }
+  
+    /* Button Hover Effect */
+    &:hover {
+      background-color: #46f5a6;
+    }
+  }
+  
+  /* Message Status Styles */
+  .message-status {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #4caf50; /* Success color */
+    
+    &.error {
+      color: #f44336; /* Error color */
+    }
+  }
+  
+  /* Responsive Media Queries */
+  @media only screen and (max-width: 940px) {
+    .contact-container {
+      padding: 50px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 0.9rem;
+    }
+  
+    .contact-form button {
+      font-size: 1rem;
+    }
+  }
+  
